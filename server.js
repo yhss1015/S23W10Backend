@@ -2,7 +2,7 @@ import express from "express"
 import mysql from 'mysql'
 
 const app = express()
-const port = 3010
+const port = 3000
 
 const db = mysql.createConnection({
 	host: 'svc.sel5.cloudtype.app',
