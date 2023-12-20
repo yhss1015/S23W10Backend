@@ -29,6 +29,18 @@ app.get('/song', (req, res) => {
   
 })
 
+app.get('/genshin_db', (req, res) => {
+  const sql = "select * from characterinfo"
+  db.query(sql, (err,rows) => {
+    if (err) {
+      res.json({ result: 'error'})
+      return console.log(err)
+    }
+    res.json(rows)
+  })
+  
+})
+
 app.listen(port, () => {
   console.log(`서버 실행됨 (port ${port})`)
 })
